@@ -36,10 +36,8 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from datasets import download_and_convert_cifar10
-from datasets import download_and_convert_flowers
-from datasets import download_and_convert_mnist
 from datasets import download_and_convert_tgs_sic
+
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -60,13 +58,7 @@ def main(_):
   if not FLAGS.dataset_dir:
     raise ValueError('You must supply the dataset directory with --dataset_dir')
 
-  if FLAGS.dataset_name == 'cifar10':
-    download_and_convert_cifar10.run(FLAGS.dataset_dir)
-  elif FLAGS.dataset_name == 'flowers':
-    download_and_convert_flowers.run(FLAGS.dataset_dir)
-  elif FLAGS.dataset_name == 'mnist':
-    download_and_convert_mnist.run(FLAGS.dataset_dir)
-  elif FLAGS.dataset_name == 'tgs-sic':
+  if FLAGS.dataset_name == 'tgs-sic':
     download_and_convert_tgs_sic.run(FLAGS.dataset_dir)
   else:
     raise ValueError(

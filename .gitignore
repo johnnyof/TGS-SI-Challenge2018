@@ -95,3 +95,8 @@ ENV/
 .DS_Store
 
 samples/outreach/blogs/segmentation_blogpost/carvana-image-masking-challenge/
+
+# Folders
+
+research/slim/all
+research/slim/tmp
